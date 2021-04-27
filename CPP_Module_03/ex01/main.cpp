@@ -1,4 +1,5 @@
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include <iostream>
 
 int main(void)
@@ -15,5 +16,11 @@ int main(void)
 	f.takeDamage(5);
 	f.vaulthunter_dot_exe("Kabir");
 	f.vaulthunter_dot_exe("Luca");
+	ScavTrap s = ScavTrap("Mirko");
+	s.meleeAttack("Pino");
+	s.rangedAttack("Saverio");
+	s.takeDamage(25);
+	s.beRepaired(10);
+	s.challengeNewcomer("Federico");
 	return (0);
 }
