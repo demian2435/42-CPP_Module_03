@@ -59,10 +59,11 @@ void FragTra::takeDamage(unsigned int amount)
 		{
 			this->hitPoints = 0;
 		}
+		std::cout << "FR4G-TP " << this->name << " c'ha preso e pizze e pure " << danno << " danni!" << std::endl;
 	}
 	else
 		danno = 0;
-	std::cout << "FR4G-TP " << this->name << " c'ha preso e pizze e pure " << danno << " danni!" << std::endl;
+	std::cout << "FR4G-TP " << this->name << " c'ha preso na pizza ma nun se fatto gnente" << std::endl;
 }
 
 void FragTra::beRepaired(unsigned int amount)
