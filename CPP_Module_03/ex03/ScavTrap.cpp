@@ -3,6 +3,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#define GREEN "\033[0;32m"
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 1) {
 	this->energyPoints = 50;
@@ -10,12 +11,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 1) {
 	this->meleeAttackDamage = 20;
 	this->rangedAttackDamage = 15;
 	this->armorDamageReduction = 3;
-	std::cout << "So " << this->name << " detto "<< this->randomTag() << std::endl;
+	std::cout << GREEN << "So " << this->name << " detto "<< this->randomTag() << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << this->name << 	" e annato aa festa de a regazza e nun risponne ar telefeno.." << std::endl;
+	std::cout << GREEN << this->name << 	" e annato aa festa de a regazza e nun risponne ar telefeno.." << std::endl;
 }
 
 void ScavTrap::challengeNewcomer(std::string const & target)
@@ -30,5 +31,5 @@ void ScavTrap::challengeNewcomer(std::string const & target)
 								": TE DO 'N CARCIO CHE PE' DATTENE 'N'ANTRO TE DEVO VENÌ A CERCÀ!",
 								": A CHICCO TE RIBBALTO COME NA COTOLETTA"};
 
-	std::cout << this->name << " je dice a " << target << this->randomTagEnemy() << challenge[std::rand() % 9] << std::endl;
+	std::cout << GREEN << this->name << " je dice a " << target << this->randomTagEnemy() << challenge[std::rand() % 9] << std::endl;
 }

@@ -1,10 +1,12 @@
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
 #include <stdlib.h>
-#include <time.h> 
+#include <time.h>
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name, int type)
 {
 	this->hitPoints = 100;
 	this->maxHintPoints = 100;
@@ -15,6 +17,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->meleeAttackDamage = 30;
 	this->rangedAttackDamage = 20;
 	this->armorDamageReduction = 5;
+	this->type = type;
 	std::cout << "SUPER COSTRUTTORE" << std::endl;
 }
 
@@ -40,18 +43,22 @@ std::string ClapTrap::randomTagEnemy(void)
 
 void ClapTrap::rangedAttack(std::string const & target)
 {
-	if (std::rand() % 100 > 50)
+	if (this->type == 0)
 		std::cout << this->name << " se mette a lancià e monetine contro " << target << this->randomTagEnemy() << ", causando sgomento e " << this->rangedAttackDamage <<" danni!" << std::endl;
-	else
+	else if (this->type == 1)
 		std::cout << this->name << " je scozza a " << target << this->randomTagEnemy() << " purgandolo de " << this->rangedAttackDamage <<" danni" << std::endl;
+	else
+		std::cout << "** TIPO NON RICONOSCIUTO **" << std::endl;
 }
 
 void ClapTrap::meleeAttack(std::string const & target)
 {
-	if (std::rand() % 100 > 50)
+	if (this->type == 0)
 		std::cout << this->name << " je parte de capoccia a " << target << this->randomTagEnemy() << ", e je regala " << this->meleeAttackDamage <<" punti danno!" << std::endl;
-	else
+	else if (this->type == 1)
 		std::cout << this->name << " tocca co un dito " << target << this->randomTagEnemy() << " e lo parcheggia co " << this->meleeAttackDamage <<" punti danno" << std::endl;
+	else
+		std::cout << "** TIPO NON RICONOSCIUTO **" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -61,13 +68,13 @@ void ClapTrap::takeDamage(unsigned int amount)
 	{
 		this->hitPoints -= danno;
 		if (this->hitPoints < 0)
-		{
 			this->hitPoints = 0;
-		}
-		if (std::rand() % 100 > 50)
+		if (this->type == 0)
 			std::cout << this->name << " c'ha preso e pizze e pure " << danno << " danni!" << std::endl;
-		else
+		else if (this->type == 1)
 			std::cout << this->name << " riceve un vocale daa regazza che je spoilera Suburra, " << danno << " danni e a catena" << std::endl;
+		else
+			std::cout << "** TIPO NON RICONOSCIUTO **" << std::endl;
 	}
 	else
 		std::cout << this->name << " c'ha preso na pizza ma nun se fatto gnente" << std::endl;
@@ -78,8 +85,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 	this->hitPoints += amount;
 	if (this->hitPoints > this->maxHintPoints)
 		this->hitPoints = this->maxHintPoints;
-	if (std::rand() % 100 > 50)
+	if (this->type == 0)
 		std::cout << this->name << " se mette a vede la seconda staggione de Romanzo Criminale, e se ripija " << amount << " punti vita" << std::endl;
-	else
+	else if (this->type == 1)
 		std::cout << this->name << " va a fa aperitivo a Parioli co l'amici in de Roma nord e se ricarica de " << amount << " punti vita" << std::endl;
+	else
+		std::cout << "** TIPO NON RICONOSCIUTO **" << std::endl;
 }

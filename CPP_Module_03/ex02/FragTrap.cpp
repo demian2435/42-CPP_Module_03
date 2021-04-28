@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h> 
 
-FragTrap::FragTrap(std::string name): ClapTrap(name) {
+FragTrap::FragTrap(std::string name): ClapTrap(name, 0) {
 	std::cout << "So " << this->name << " detto "<< this->randomTag() << std::endl;
 }
 
