@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 
-class FragTrap
+class ClapTrap
 {
-	private:
+	protected:
 		int hitPoints;
 		int maxHintPoints;
 		int energyPoints;
@@ -15,17 +15,11 @@ class FragTrap
 		int armorDamageReduction;
 		std::string randomTag(void);
 		std::string randomTagEnemy(void);
-		void special_1(std::string const & target);
-		void special_2(std::string const & target);
-		void special_3(std::string const & target);
-		void special_4(std::string const & target);
-		void special_5(std::string const & target);
 	public:
-		FragTrap(std::string name);
-		~FragTrap(void);
+		ClapTrap(std::string name);
+		~ClapTrap(void);
 		void rangedAttack(std::string const & target);
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		void vaulthunter_dot_exe(std::string const & target);
 };

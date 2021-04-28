@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-class FragTra
+class FragTrap
 {
 	private:
 		int hitPoints;
@@ -21,8 +21,8 @@ class FragTra
 		void special_4(std::string const & target);
 		void special_5(std::string const & target);
 	public:
-		FragTra(std::string name);
-		~FragTra(void);
+		FragTrap(std::string name);
+		~FragTrap(void);
 		void rangedAttack(std::string const & target);
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);

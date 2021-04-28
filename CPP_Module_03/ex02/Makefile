@@ -83,8 +83,8 @@ On_IPurple	=	'\033[0;105m'	# Purple
 On_ICyan	=	'\033[0;106m'	# Cyan
 On_IWhite	=	'\033[0;107m'	# White
 
-NAME		=	ex01
-SRC			=	FragTrap.cpp ScavTrap.cpp main.cpp
+NAME		=	ex02
+SRC			=	ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
 CC			=	clang++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -pedantic
 

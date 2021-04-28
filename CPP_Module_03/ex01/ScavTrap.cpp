@@ -26,7 +26,7 @@ ScavTrap::~ScavTrap(void)
 
 std::string ScavTrap::randomTag(void)
 {
-	const std::string tag[6] = {"er Monnezzaro", "er Torinese", "er Benzinaro", "er Tigre", "er Re de Frosinone", "detto Batman"};
+	const std::string tag[6] = {"er Monnezzaro", "er Torinese", "er Benzinaro", "er Tigre", "er Re de Frosinone", "er Batman de Monteverde"};
 	std::string myTag = tag[std::rand() % 6];
 	const std::string comm[3] = {" e so stato du anni ar gabbio"," trasteverino vecchia scuola"," ma detto n'amico che te serve na mano"};
 	this->name += " " + myTag;

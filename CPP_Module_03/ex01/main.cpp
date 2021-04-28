@@ -4,8 +4,8 @@
 
 int main(void)
 {
-	std::cout << "**BENEVNUTO SU FRAGTRA CRIMINALE **" << std::endl;
-	FragTra f = FragTra("Mario");
+	std::cout << "**BENEVNUTO SU ROBOT CRIMINALE **" << std::endl;
+	FragTrap f = FragTrap("Mario");
 	f.rangedAttack("Giuseppe");
 	f.takeDamage(40);
 	f.meleeAttack("Pippo");
